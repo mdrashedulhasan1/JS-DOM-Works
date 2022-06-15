@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div class="blog">
+            <h2>Blog-01</h2>
+            <p>1.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, adipisci.</p>
+        </div>
+        <div class="blog">
+            <h2>Blog-02</h2>
+            <p>2.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, adipisci.</p>
+        </div>
+        <div class="blog">
+            <h2>Blog-03</h2>
+            <p>3.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, adipisci.</p>
+        </div>
+    </div>
+    <script>
+        const div = document.createElement('div');
+        div.classList.add('blog');
+        div.innerHTML = `
+            <h2>Blog-04</h2>
+            <p>4.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, adipisci.</p>
+        `;
+        // const h1 = document.createElement('h2');
+        // h1.innerText = `Blog-04`;
+        // const p = document.createElement('p');
+        // p.innerText = `4.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, adipisci.`;
+        // div.appendChild(h1);
+        // div.appendChild(p);
+
+        const parentDiv = document.getElementById('container');
+        parentDiv.appendChild(div);
+        const blogs = document.getElementsByClassName('blog');
+        for(const blog of blogs){
+            blog.style.color = 'red';
+            blog.style.backgroundColor = 'gold';
+            blog.style.border = '2px solid tomato';
+            blog.style.margin = '2px 10px';
+            blog.style.padding = '5px 10px';
+            blog.style.borderRadius = '10px';
+        }
+
+        const blogsText = document.querySelectorAll('.blog h2');
+        for(const blogText of blogsText){
+            blogText.style.textAlign = 'center';
+        }
+    </script>
+</body>
+</html>
